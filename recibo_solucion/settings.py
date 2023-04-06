@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'recibo_solucion.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'base_de_datos',
     }
 }
 
