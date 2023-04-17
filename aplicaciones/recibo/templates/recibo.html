@@ -1,0 +1,68 @@
+{% extends "./base.html" %}
+
+{% block title %} CompraenUSAec Recibo {% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <!-- Logo -->
+            <img src="https://www.tusolucion.com/images/logo.png" alt="Logo" class="img-fluid">
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12">
+            <!-- Dirección -->
+            <p>TuSolucion.com</p>
+            <p>Calle 123</p>
+            <p>Ciudad, Estado</p>
+            <p>Teléfono: 1234567890</p>
+            <p>Email: info@tusolucion.com</p>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12">
+            <!-- Detalle del cobro -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Concepto</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Servicio</td>
+                        <td>$0.10</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Servicio</td>
+                        <td>$0.15</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Servicio</td>
+                        <td>$0.20</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="2">Total</th>
+                        <td>$0.45</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12">
+            <!-- Mensaje -->
+            <p>Los cobros realizados en este recibo están autorizados y aceptados por el cliente.</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
