@@ -10,4 +10,5 @@ urlpatterns = [
     path('registro/', views.registro),
     path('buscar-cliente/', views.buscar_cliente, name='buscar_cliente'),
     path('recibo/', views.buscar_cliente, name='recibo'),
+    # path('print/', views.print_view, name='print')
 ]

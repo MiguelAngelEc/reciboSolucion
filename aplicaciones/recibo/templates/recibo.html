@@ -7,39 +7,44 @@
 
 {% load static %} 
 <div class="container-sm col-5 py-5">
-    <div class="row">
-        <div class="col-12">
-            <!-- Logo -->
-            <a class="navbar-brand" href="#"><img src="{% static 'img/Logo.png' %}"  width="75" height="75" alt="Descripción de la imagen">
-            </a>
-        </div>
+    <div class="bg-warning-subtle text-dark py-3">
+        <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <h1>TuSolucion.com</h1>
+                <p>Calle 123, Ciudad, Estado</p>
+                <p>Teléfono: 1234567890</p>
+                <p>Email: info@tusolucion.com</p>
+              </div>
+            </div>
+          </div>
     </div>
-    <div class="row mt-3">
-        <div class="col-12">
-            <!-- Dirección -->
-            <ul>
-                <li>TuSolucion.com</li>
-                <li>Calle 123</li>
-                <li>Ciudad, Estado</li>
-                <li>Teléfono: 1234567890</li>
-                <li>Email: info@tusolucion.com</li>
-            </ul>
-        </div>
-    </div>
-    <div class="container display-6 d-flex">
-        <h4>Valor:</h4>
-        <select>
-            <option value="ValorUno">$0.10</option>
-            <option value="ValorDos">$0.15</option>
-            <option value="ValorTres">$0.20</option>
-        </select>
-    </div>
-    <div class="row mt-3">
-        <div class="col-12">
-            <!-- Mensaje -->
-            <p>Los cobros realizados en este recibo están autorizados y aceptados por el cliente.</p>
-        </div>
-    </div>
+    <div class="container">
+        <h1>Recibo</h1>
+        <div class="row">
+          <div class="col-md-6">
+            <select id="selectValor" class="form-control">
+                <option value="1">$0.10</option>
+                <option value="2">$0.15</option>
+                <option value="3">$0.20</option>
+            </select>  
+            <table>
+            <thead>
+                <tr>
+                <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody id="tablaValores">
+            </tbody>
+            </table>
+            <button id="print_view" class="btn btn-success" onclick="window.print()">Imprimir</button>
+            <button id="borrarValores" class="btn btn-danger">Borrar valores</button>
+            
+      </div>
+      <!-- Importa los archivos JS de Bootstrap y jQuery -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </div>
 
 {% endblock %}
