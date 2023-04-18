@@ -19,11 +19,11 @@ def recibo(request):
 def registro(request):
     if request.method == 'POST':
         codigo = request.POST.get('txtCodigo')
-        nombre = request.POST.get('txtnombre')
-        direccion = request.POST.get('txtdireccion')
-        ciudad = request.POST.get('txtciudad')
-        telefono = request.POST.get('txttelefono')
-        email = request.POST.get('txtcorreo')
+        nombre = request.POST.get('txtNombre')
+        apellido=request.POST['txtApellido']
+        direccion = request.POST.get('txtDireccion')
+        telefono = request.POST.get('txtTelefono')
+        correo = request.POST.get('txtEmail')
         
         # Comprueba si ya existe un registro con el mismo código
         if cliente.objects.filter(codigo=codigo).exists():
@@ -45,18 +45,18 @@ def edicionCliente(request, codigo):
 
 def editarCliente(request):
        codigo=request.POST['txtCodigo']
-       nombre=request.POST['txtNombreApellido']
+       nombre=request.POST['txtNombre']
+       apellido=request.POST['txtApellido']
        direccion=request.POST['txtDireccion']
-       ciudad=request.POST['txtCiudad']
        telefono=request.POST['txtTelefono']
-       email=request.POST['txtEmail']
+       correo=request.POST['txtEmail']
        
        listado = cliente.objects.get(codigo=codigo)
-       listado.Nombre_Apellido = nombre
+       listado.Nombre = nombre
+       listado.Apellido = apellido
        listado.Direccion = direccion
-       listado.Ciudad = ciudad
        listado.Telefono = telefono
-       listado.email = email
+       listado.email = correo
        listado.save()
        
        return redirect('/')
@@ -74,9 +74,9 @@ def buscar_cliente(request):
         codigo = request.POST['codigo']
         cliente.objects.filter(codigo=codigo).first()
         if cliente:
-            return render(request, 'reciboCliente.html', {'cliente': cliente})
+            return render(request, 'recibo.html', {'cliente': cliente})
         else:
             mensaje = f"No se encontró un cliente con el código {codigo}."
-            return render(request, 'reciboCliente.html', {'mensaje': mensaje})
+            return render(request, 'recibo.html', {'mensaje': mensaje})
     else:
-        return render(request, 'reciboCliente.html')
+        return render(request, 'recibo.html')
