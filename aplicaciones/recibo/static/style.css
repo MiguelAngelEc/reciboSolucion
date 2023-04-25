@@ -1,0 +1,36 @@
+@media print {
+  /* Estilos para el encabezado */
+  .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  }
+  
+  .header img {
+  width: 50px;
+  height: 50px;
+  }
+  
+  .header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: bold;
+  }
+  
+  /* Estilos para los valores a ser cancelados */
+  .values {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  }
+  
+  /* Estilos para el texto de aceptación del cliente */
+  .acceptance {
+  font-size: 12px;
+  margin-top: 15px;
+  }
+  }

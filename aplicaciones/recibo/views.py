@@ -81,7 +81,7 @@ def buscar_cliente(request):
     else:
         return render(request, 'recibo.html')
 #codigo para imprimir    
-# def print_view(request):
-#     select_valor = request.GET.get('selectValor', '')
-#     context = {'select_valor': select_valor}
-#     return render(request, 'print.html', context)
+def print_view(request):
+    select_valor = request.GET.get('selectValor', '')
+    context = {'select_valor': select_valor}
+    return render(request, 'print.html', context)
